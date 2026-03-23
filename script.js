@@ -316,6 +316,7 @@ function setupContactForm() {
   const statusEl = document.getElementById("form-status");
   if (!form || !statusEl || !window.fetch) return;
   const submitBtn = form.querySelector('button[type="submit"]');
+  const ajaxEndpoint = form.action.replace("https://formsubmit.co/", "https://formsubmit.co/ajax/");
 
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -331,7 +332,7 @@ function setupContactForm() {
     const formData = new FormData(form);
 
     try {
-      const response = await fetch(form.action, {
+      const response = await fetch(ajaxEndpoint, {
         method: "POST",
         body: formData,
         headers: {
@@ -340,7 +341,7 @@ function setupContactForm() {
       });
 
       if (response.ok) {
-        statusEl.textContent = "Message sent successfully. Thank you!";
+        statusEl.textContent = "Message sent successfully. Please also check spam or your FormSubmit activation email if this is the first submission.";
         statusEl.className = "form-status success";
         form.reset();
       } else {
