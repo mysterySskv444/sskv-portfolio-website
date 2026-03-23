@@ -113,6 +113,23 @@ function setupThemeToggle() {
 
   const body = document.body;
   const THEME_KEY = "sujeet-portfolio-theme";
+  const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+
+  function readSavedTheme() {
+    try {
+      return localStorage.getItem(THEME_KEY);
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function saveTheme(theme) {
+    try {
+      localStorage.setItem(THEME_KEY, theme);
+    } catch (error) {
+      // Ignore storage errors in restrictive/private browsing contexts.
+    }
+  }
 
   // Apply the given theme class to <body> and save preference.
   function applyTheme(theme) {
@@ -124,21 +141,27 @@ function setupThemeToggle() {
     body.classList.toggle("light-theme", isLight);
     body.classList.toggle("dark-theme", !isLight);
 
-    localStorage.setItem(THEME_KEY, isLight ? "light" : "dark");
+    saveTheme(isLight ? "light" : "dark");
+    if (themeColorMeta) {
+      themeColorMeta.setAttribute("content", isLight ? "#f3f4f6" : "#020617");
+    }
     updateIcon(isLight);
   }
 
   // Update the button icon based on current mode.
   function updateIcon(isLightMode) {
+    toggleBtn.setAttribute("aria-pressed", String(isLightMode));
     if (isLightMode) {
       toggleBtn.textContent = "☀️";
+      toggleBtn.setAttribute("aria-label", "Switch to dark theme");
     } else {
       toggleBtn.textContent = "🌙";
+      toggleBtn.setAttribute("aria-label", "Switch to light theme");
     }
   }
 
   // Determine initial theme: saved preference -> system preference -> default dark.
-  const savedTheme = localStorage.getItem(THEME_KEY);
+  const savedTheme = readSavedTheme();
   if (savedTheme === "light" || savedTheme === "dark") {
     applyTheme(savedTheme);
   } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) {
