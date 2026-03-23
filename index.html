@@ -3,36 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
     <meta name="theme-color" content="#020617" />
-    <meta
-      name="description"
-      content="Portfolio of Sharma Sujeet Kumar Vinod, a full stack and Android developer building modern, responsive, and practical digital products."
-    />
-    <meta
-      name="keywords"
-      content="Sujeet Sharma, full stack developer, Android developer, web developer portfolio"
-    />
+    <meta name="description" content="Portfolio of Sharma Sujeet Kumar Vinod (SSKV), a full stack and Android developer building modern, responsive, and practical digital products." />
+    <meta name="keywords" content="Sharma Sujeet Kumar Vinod, Sharma Sujeet, Sujeet Sharma, Sujeet Kumar, SSKV, full stack developer, Android developer, web developer portfolio" />
     <meta name="author" content="Sharma Sujeet Kumar Vinod" />
     <meta name="robots" content="index, follow" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Sujeet Sharma | Developer Portfolio" />
+    <meta property="og:url" content="https://mysterysskv444.github.io/sskv-portfolio-website/" />
+    <meta property="og:site_name" content="SSKV Developer Portfolio" />
+    <meta property="og:title" content="Sharma Sujeet Kumar Vinod (SSKV) | Developer Portfolio" />
     <meta
       property="og:description"
       content="Explore projects, skills, and experience of Sharma Sujeet Kumar Vinod."
     />
-    <meta property="og:image" content="images/profile.jpg" />
+    <meta property="og:image" content="https://mysterysskv444.github.io/sskv-portfolio-website/images/profile.jpg" />
+    <meta property="og:image:alt" content="Portrait of Sharma Sujeet Kumar Vinod" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Sujeet Sharma | Developer Portfolio" />
+    <meta name="twitter:title" content="Sharma Sujeet Kumar Vinod (SSKV) | Developer Portfolio" />
     <meta
       name="twitter:description"
       content="Portfolio of Sharma Sujeet Kumar Vinod - full stack and Android developer."
     />
-    <link rel="canonical" href="/" />
+    <meta name="twitter:image" content="https://mysterysskv444.github.io/sskv-portfolio-website/images/profile.jpg" />
+    <meta name="twitter:image:alt" content="Portrait of Sharma Sujeet Kumar Vinod" />
+    <link rel="canonical" href="https://mysterysskv444.github.io/sskv-portfolio-website/" />
 
-    <title>Sujeet Sharma | Developer Portfolio</title>
+    <title>Sharma Sujeet Kumar Vinod (SSKV) | Developer Portfolio</title>
 
     <!-- Global styles for the portfolio -->
     <link rel="stylesheet" href="style.css" />
+    <link rel="preload" as="image" href="images/bg1.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
@@ -44,8 +45,26 @@
 
     <!-- google verification code for search console ,verify ownership -->
     <meta name="google-site-verification" content="njIb3YqKa0nDJ4MqsSIJCo1Q_FBa6eQ4gATrTTNe8Ns" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Sharma Sujeet Kumar Vinod",
+        "alternateName": "SSKV",
+        "url": "https://mysterysskv444.github.io/sskv-portfolio-website/",
+        "image": "https://mysterysskv444.github.io/sskv-portfolio-website/images/profile.jpg",
+        "jobTitle": "Full Stack Developer and Android Developer",
+        "description": "Portfolio of Sharma Sujeet Kumar Vinod, a developer building responsive web and Android experiences.",
+        "email": "mailto:sharmasujeet62994@gmail.com",
+        "sameAs": [
+          "https://github.com/sharmasujeet"
+        ]
+      }
+    </script>
   </head>
 
+
+  
   <!-- The theme class on body is toggled by JavaScript for dark / light mode -->
   <!-- Default is dark-mode; JavaScript may switch this to light-mode based on saved preference -->
   <body class="dark-mode">
@@ -53,7 +72,7 @@
     <!-- NAVBAR: sticky navigation with logo, menu links, theme toggle and mobile menu -->
     <header class="header">
       <nav class="navbar container">
-        <div class="logo">Sujeet.dev</div>
+        <div class="logo">SskV.dev</div>
 
         <!-- Primary navigation links -->
         <ul class="nav-links" id="navLinks">
@@ -68,7 +87,7 @@
         <!-- Right side icons: theme toggle + hamburger for mobile -->
         <div class="nav-actions">
           <!-- Theme toggle button text/icon updated in script.js -->
-          <button id="theme-toggle" class="icon-button" aria-label="Toggle theme">
+          <button id="theme-toggle" class="icon-button" aria-label="Switch to light theme" aria-pressed="false">
             🌙
           </button>
 
@@ -100,14 +119,14 @@
             <!-- Small intro line above the main name -->
             <p class="hero-eyebrow">Hi, I’m</p>
             <!-- Name split so "Sujeet Kumar" can have the gradient highlight -->
-            <h1 class="hero-title">
-              <span class="hero-title-main">Sharma</span>
-              <span class="hero-title-last">Sujeet&nbsp;Kumar</span>
-              Vinod
-            </h1>
+         <h1 class="hero-title" aria-label="Sharma Sujeet Kumar Vinod">
+  <span class="hero-title-main">Sharma</span>
+  <span class="hero-title-last">Sujeet Kumar</span>
+  Vinod
+</h1>
             <!-- Dynamic role text typed via JavaScript -->
             <h2 class="hero-subtitle">
-              <span id="typed"></span>
+              <span id="typed">Full Stack Developer | Android Developer | SSKV | Tech Learner</span>
               <span class="cursor">|</span>
             </h2>
             <p class="hero-description">
@@ -148,7 +167,7 @@
 
         <div class="glass about-card reveal">
           <p>
-            Hello! I'm <strong>Sharma Sujeet Kumar Vinod</strong>, a developer who enjoys building
+            Hello! I'm <strong>Sharma Sujeet Kumar Vinod (SSKV)</strong>, a developer who enjoys building
             modern web interfaces and practical Android applications. I love taking ideas from
             concept to a polished, working product.
           </p>
@@ -365,6 +384,8 @@
             loading="lazy"
             sandbox="allow-scripts"
             referrerpolicy="no-referrer"
+            tabindex="-1"
+            aria-hidden="true"
           ></iframe>
           <div class="video-overlay-text">
             <p>
@@ -413,6 +434,7 @@
               <!-- Keep FormSubmit captcha enabled and use a simple table template in the email -->
               <input type="hidden" name="_captcha" value="true" />
               <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_next" value="https://mysterysskv444.github.io/sskv-portfolio-website/" />
               <!-- Subject line that appears in your inbox -->
               <input type="hidden" name="_subject" value="New message from portfolio contact form" />
 
