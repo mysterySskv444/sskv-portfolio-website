@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mysterysskv444.github.io/sskv-portfolio-website/sitemap.xml
